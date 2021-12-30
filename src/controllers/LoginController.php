@@ -17,7 +17,8 @@ class LoginController
         header("/src/views/login.php");
     }
         include_once ROOT_DIR . '/src/views/login/login.php';
-    }
+    } 
+}
     public static function Adre() {
         include_once ROOT_DIR . '/src/views/login/ad-re.php';
     }

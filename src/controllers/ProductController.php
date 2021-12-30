@@ -101,7 +101,23 @@ class ProductController
 
     public static function Category()
     {
+
+        /**
+             * Mặc định page = 1
+             * Nếu URL > 2 => có số trang => gắn page lại bằng cách tách chuỗi trang-page
+             */
+            $page = 1;
+            if (count(URL) > 2) {
+                $arr = explode("-", URL[2]);
+                $page =  $arr[count($arr) - 1];
+            }
+            $link = BASE_URL . '/danh-muc/' . URL[0] . '/trang-';
+        //ham` backend gui ve`
+        $count = 23;
+        $count = $count % 12 == 0 ? intval($count / 12) : intval($count / 12) + 1;
+        
         include_once ROOT_DIR . '/src/views/user/category.php';
+
     }
     // public static function Pagination()
     // {
