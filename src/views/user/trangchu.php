@@ -69,13 +69,13 @@
                         <div class="products" style="margin-left:20px;">
                             <div class="row no-gutters">
                                 <!-- san pham o day  -->
-                                <?php for ($i = 0; $i < 12; $i++) {  ?>
+                                <?php foreach ($productList as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
                                             <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
                                                 <a href="<?php echo BASE_URL . '/san-pham' ?>"><img class="img-fluid d-block mx-auto" src="assets/img/ip/13poca.jpg"></a>
                                             </div>
-                                            <div class="product-name">Iphone 13</div>
+                                            <div class="product-name"><?php  echo $product['p_name'] ?> </div>
                                             <div class="about">
                                                 <div class="price">
                                                     <h3>$300</h3>

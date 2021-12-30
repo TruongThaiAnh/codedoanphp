@@ -7,8 +7,6 @@ class ProductController
         $productModels = new ProductModel();
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
-        var_dump($productList);
-        var_dump($pruductHot);
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
     }
     // tìm kiếm sản phẩm
