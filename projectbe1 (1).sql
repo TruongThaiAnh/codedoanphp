@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 30, 2021 lúc 12:31 PM
+-- Thời gian đã tạo: Th12 30, 2021 lúc 01:13 PM
 -- Phiên bản máy phục vụ: 5.7.31
 -- Phiên bản PHP: 7.3.21
 
@@ -154,6 +154,19 @@ INSERT INTO `product_category` (`category_ID`, `productID`) VALUES
 (5, 13),
 (6, 14),
 (6, 15);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `slider`
+--
+
+DROP TABLE IF EXISTS `slider`;
+CREATE TABLE IF NOT EXISTS `slider` (
+  `s_id` int(11) NOT NULL AUTO_INCREMENT,
+  `s_name` varchar(250) NOT NULL,
+  PRIMARY KEY (`s_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
