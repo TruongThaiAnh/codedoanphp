@@ -18,9 +18,11 @@ class ProductController
         $search = $_GET["search"];
         
         $page = 1;
+
    
             if (count(URL) > 1) {
                 $arr = explode("-", URL[1]);
+
                 $page = $arr[count($arr) - 1];
             }
 
@@ -35,7 +37,9 @@ class ProductController
             /**
              * Tạo đường dẫn dùng cho phân trang
              */
+
             $link = BASE_URL . '/tim-kiem/'. '/trang-'  ;
+
             $products = $productModels->searchProducts($search,$page);
             var_dump($products);
            
@@ -102,6 +106,7 @@ class ProductController
     }
 
     public static function Category()
+
     {   $categoryModel = new CategoryModel();
         $productModel = new ProductModel();
         $categories =  $categoryModel->getCategories();
@@ -120,12 +125,14 @@ class ProductController
             $name = "%" . implode("%", $arr) . "%";
 
             /**
+
              * Mặc định page = 1
              * Nếu URL > 2 => có số trang => gắn page lại bằng cách tách chuỗi trang-page
              */
             $page = 1;
             if (count(URL) > 2) {
                 $arr = explode("-", URL[2]);
+
                 $page = $arr[count($arr) - 1];
             }
 
@@ -150,6 +157,7 @@ class ProductController
              */
             header("Location: " . BASE_URL . '/danh-muc/' . TienIch::vn_to_str($categories[0]['c_name']) . '-' . $categories[0]['c_id']);
         }
+
 
     }
     // public static function Pagination()
