@@ -2,7 +2,9 @@
 
 class ProductModel extends Db
 {
-    // lấy tất cả sản phẩm
+
+    // lấy  sản phẩm theo view
+
     public function getProductsView()
     {
                    
@@ -19,6 +21,11 @@ class ProductModel extends Db
         return parent::select($sql); // xuất kết quả
     }
     
+
+    public function getProduct(){
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `status` = 1   LIMIT 0,12");
+        return parent::select($sql); // xuất kết quả
+    }
 
     
 
@@ -59,7 +66,9 @@ class ProductModel extends Db
     WHERE
         `product`.`status` = 1 AND `product_category`.`category_id` = ? AND `categories`.`c_name` LIKE ?");
         $sql->bind_param("is", $id, $name);
-        return parent::select($sql)[0]['COUNT(`product`.`product_id`)'];
+
+        return parent::select($sql)[0]['COUNT(`product`.`p_id`)'];
+
     }
 
     /**
