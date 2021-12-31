@@ -37,7 +37,7 @@
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
                                             <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
-                                                <a href="<?php echo BASE_URL . '/san-pham' ?>"><img class="img-fluid d-block mx-auto" src="assets/img/ip/ip11ca.jpg"></a>
+                                                <a href="<?php echo BASE_URL . '/san-pham' ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL ?>/assets/img/ip/ip11ca.jpg"></a>
                                             </div>
                                             <div class="product-name">Iphone 13</div>
                                             <div class="about">
@@ -51,15 +51,7 @@
                             </div>
                             <!-- san pham o day  -->
 
-                            <nav>
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                </ul>
-                            </nav>
+                            <?php include ROOT_DIR ."/src/views/user/pagination.php" ?>
                         </div>
                         </div>
                     </div>

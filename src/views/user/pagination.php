@@ -1,8 +1,12 @@
 <nav>
     <ul class="pagination">
-        <li class="page-item <?php  $page = 1; if ($page == 1) echo 'disabled' ?>"><a class="page-link" href="<?php echo $link . '1' ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+        <li class="page-item <?php  if ($page == 1) echo 'disabled' ?>"><a class="page-link" href="<?php echo $link . '1' ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
         <?php
+
         for ($i = 1; $i <= $count; $i++) {
+
+       
+            
             if ($page == $i) {
         ?>
                 <li class="page-item active"><a class="page-link" href="<?php echo $link . $i ?>"><?php echo $i; ?></a></li>

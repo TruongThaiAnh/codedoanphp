@@ -2,7 +2,9 @@
 
 class ProductModel extends Db
 {
-    // lấy tất cả sản phẩm
+
+    // lấy  sản phẩm theo view
+
     public function getProductsView()
     {
                    
@@ -19,6 +21,11 @@ class ProductModel extends Db
         return parent::select($sql); // xuất kết quả
     }
     
+
+    public function getProduct(){
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `status` = 1   LIMIT 0,12");
+        return parent::select($sql); // xuất kết quả
+    }
 
     
 
@@ -59,7 +66,9 @@ class ProductModel extends Db
     WHERE
         `product`.`status` = 1 AND `product_category`.`category_id` = ? AND `categories`.`c_name` LIKE ?");
         $sql->bind_param("is", $id, $name);
-        return parent::select($sql)[0]['COUNT(`product`.`product_id`)'];
+
+        return parent::select($sql)[0]['COUNT(`product`.`p_id`)'];
+
     }
 
     /**
@@ -78,11 +87,11 @@ class ProductModel extends Db
      * Lấy thông tin của sản phẩm
      * Nếu sản phẩm không tồn tại trả về null
      */
-    public function getProductInfo($id)
+    public function getProductInfo($id, $name)
     {
         
-        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `status` = 1");
-        $sql->bind_param("i", $id);
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `p_name` LIKE ? AND  `status` = 1");
+        $sql->bind_param("is", $id, $name);
         $result = parent::select($sql);
         return count($result) != 0 ? parent::select($sql)[0] : null;
     }
