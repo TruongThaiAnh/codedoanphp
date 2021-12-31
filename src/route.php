@@ -23,9 +23,9 @@ if (count(URL) != 0) {
         case 'tuong-tac':
             ProductController::ContactUs();
             break;
-        // case 'phan-trang':
-        //     ProductController::Pagination();
-        //     break;
+            // case 'phan-trang':
+            //     ProductController::Pagination();
+            //     break;
             // phan` san pham
             // phan` san pham
 
@@ -37,6 +37,9 @@ if (count(URL) != 0) {
             break;
         case 'thanh-toan':
             CartController::Pay();
+            break;
+        case 'them-gio-hang':
+            CartController::AddCart();
             break;
             //phan` gio hang`
             //phan` gio hang`
