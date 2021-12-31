@@ -87,11 +87,11 @@ class ProductModel extends Db
      * Lấy thông tin của sản phẩm
      * Nếu sản phẩm không tồn tại trả về null
      */
-    public function getProductInfo($id)
+    public function getProductInfo($id, $name)
     {
         
-        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `status` = 1");
-        $sql->bind_param("i", $id);
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `p_name` LIKE ? AND  `status` = 1");
+        $sql->bind_param("is", $id, $name);
         $result = parent::select($sql);
         return count($result) != 0 ? parent::select($sql)[0] : null;
     }

@@ -5,7 +5,7 @@ class CategoriesController
     public static function getCate()
     {
 
-        $categories = new CategoriesModel();
+        $categories = new CategoryModel();
         $categoriesList = $categories->getCategories();
         var_dump($categoriesList);
     }
@@ -13,7 +13,7 @@ class CategoriesController
     {
 
         $name = 'thanh';
-        $categories = new CategoriesModel();
+        $categories = new CategoryModel();
         $categoriesList = $categories->addCategory($name);
         var_dump($categoriesList);
     }
@@ -23,7 +23,7 @@ class CategoriesController
 
         $i = "1";
         $n = 'iphone';
-        $categories = new CategoriesModel();
+        $categories = new CategoryModel();
         $categoriesList = $categories->editCategory($n, $i);
         var_dump($categoriesList);
     }
@@ -33,7 +33,7 @@ class CategoriesController
 
         $t = "13";
 
-        $categories = new CategoriesModel();
+        $categories = new CategoryModel();
         $categoriesList = $categories->deleteCategory($t);
         var_dump($categoriesList);
     }
@@ -43,7 +43,7 @@ class CategoriesController
         $id = "1";
         $name = "phone";
         $start = "1";
-        $categories = new CategoriesModel();
+        $categories = new CategoryModel();
         $categoriesList = $categories->getProductsBYID($id, $name, $start);
         var_dump($categoriesList);
     }
@@ -53,7 +53,7 @@ class CategoriesController
     {
 
 
-        $categoryModel = new CategoriesModel();
+        $categoryModel = new CategoryModel();
         $productModel = new ProductModel();
         $categories =  $categoryModel->getCategories();
         /**
@@ -90,7 +90,7 @@ class CategoriesController
              * Tạo đường dẫn dùng cho phân trang
              */
             $link = BASE_URL . '/danh-muc/' . URL[1] . '/trang-';
-            $products = $productModel->getProductsCategory($id, $name, $page);
+            $products = $categoryModel->getProductsCategory($id, $name, $page);
             include ROOT_DIR . '/src/views/user/danh-muc.php';
         } else {
             /**

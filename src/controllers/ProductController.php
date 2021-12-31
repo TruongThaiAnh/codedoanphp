@@ -58,8 +58,11 @@ class ProductController
         if (count(URL) > 1) {
            
             // $name ="iphone X";
-            $id = 2;
-            $product_info = $productInfo->getProductInfo($id);
+            $arr = explode("-", URL[1]);
+            $id = $arr[count($arr) - 1];
+            unset($arr[count($arr) - 1]);
+            $name = "%" . implode("%", $arr) . "%";
+            $product_info = $productInfo->getProductInfo($id, $name);
             
 
             /**
@@ -76,7 +79,7 @@ class ProductController
              * Nếu sản phẩm không tồn tại => hiển thị trang 404
              * Nếu sản phẩm tồn tại => cắt chuỗi product_image thành mảng hình ảnh để hiển thị, tính giá tiền sản phẩm sau khi giảm giá => hiển thị giao diện trang thông tin sản phẩm
              */
-            $product = $productInfo->getProductInfo($id);
+            $product = $productInfo->getProductInfo($id, $name);
             if (empty($product)) {
                // include ROOT_DIR . '/src/views/admin/404.php';
             } else {
