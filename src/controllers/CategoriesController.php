@@ -43,6 +43,8 @@ class CategoriesController
         $id = "1";
         $name = "phone";
         $start = "1";
+
+        
         $categories = new CategoryModel();
         $categoriesList = $categories->getProductsBYID($id, $name, $start);
         var_dump($categoriesList);
