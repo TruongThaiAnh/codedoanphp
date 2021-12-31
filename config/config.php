@@ -1,6 +1,6 @@
 <?php
-define('DB_HOST', 'sql210.epizy.com');
-define('DB_USER', 'epiz_30666129');
-define('DB_PASS', 'psVDfSvbylzm');
-define('DB_NAME', 'epiz_30666129_be1');
-define('DB_PORT', '3306');
+define('DB_HOST', '127.0.0.1');
+define('DB_USER','root');
+define('DB_PASS', '');
+define('DB_NAME', 'projectbe2');
+define('DB_PORT', '3308');

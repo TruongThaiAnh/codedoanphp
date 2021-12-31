@@ -1,6 +1,6 @@
 <?php
 define('ROOT_DIR', __DIR__);
-define('BASE_URL', 'http://127.0.0.1/web3');
+define('BASE_URL', 'http://127.0.0.1/codedoanphp');
 
 
 
