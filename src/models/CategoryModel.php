@@ -19,6 +19,6 @@ class CategoryModel extends Db{
         $sql->bind_param("isi", $id, $name, $start);
         return parent::select($sql); // xuất kết quả
     }
-
+   
 }
 ?>
