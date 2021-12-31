@@ -12,7 +12,7 @@ if (count(URL) != 0) {
             ProductController::SearchController();
             break;
         case 'san-pham':
-            ProductController::GetProductController();
+            ProductController::ProductInfoController();
             break;
         case 'danh-muc':
             ProductController::Category();
