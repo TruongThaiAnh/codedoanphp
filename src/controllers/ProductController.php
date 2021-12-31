@@ -56,14 +56,22 @@ class ProductController
          */
         $productInfo = new ProductModel();
         if (count(URL) > 1) {
-           
+           /**
+             * Tách chuỗi tên-id thành 2 biến name và id
+             */
+            $arr = explode("-", URL[1]);
+            $id = $arr[count($arr) - 1];
+            unset($arr[count($arr) - 1]);
+            $nme = "%" . implode("%", $arr) . "%";
             // $name ="iphone X";
+
             $arr = explode("-", URL[1]);
             $id = $arr[count($arr) - 1];
             unset($arr[count($arr) - 1]);
             $name = "%" . implode("%", $arr) . "%";
             $product_info = $productInfo->getProductInfo($id, $name);
-            
+
+  
 
             /**
              * Kiểm tra cookie đã lưu lần cập lượt xem của sản phẩm này chưa
