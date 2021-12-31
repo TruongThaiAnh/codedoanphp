@@ -8,6 +8,7 @@ class ProductController
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
+        include_once ROOT_DIR . '/src/views/user/category.php';
     }
     // tìm kiếm sản phẩm
     public static function SearchController()
