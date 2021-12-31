@@ -2,7 +2,7 @@
     <ul class="pagination">
         <li class="page-item <?php  if ($page == 1) echo 'disabled' ?>"><a class="page-link" href="<?php echo $link . '1' ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
         <?php
-        for ($i = 1; $i <= $count; $i++) {
+        foreach ($products as $item) {
             
             if ($page == $i) {
         ?>
