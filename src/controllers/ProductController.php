@@ -19,9 +19,11 @@ class ProductController
         $search = $_GET["search"];
         
         $page = 1;
-    
-            if (count(URL) > 2) {
-                $arr = explode("-", URL[2]);
+
+   
+            if (count(URL) > 1) {
+                $arr = explode("-", URL[1]);
+
                 $page = $arr[count($arr) - 1];
             }
 
@@ -36,7 +38,9 @@ class ProductController
             /**
              * Tạo đường dẫn dùng cho phân trang
              */
-            $link = BASE_URL . '/tim-kiem/' . URL[0] . '/trang-';
+
+            $link = BASE_URL . '/tim-kiem/'. '/trang-'  ;
+
             $products = $productModels->searchProducts($search,$page);
             var_dump($products);
            
@@ -55,8 +59,11 @@ class ProductController
         if (count(URL) > 1) {
            
             // $name ="iphone X";
-            $id = 2;
-            $product_info = $productInfo->getProductInfo($id);
+            $arr = explode("-", URL[1]);
+            $id = $arr[count($arr) - 1];
+            unset($arr[count($arr) - 1]);
+            $name = "%" . implode("%", $arr) . "%";
+            $product_info = $productInfo->getProductInfo($id, $name);
             
 
             /**
@@ -73,13 +80,13 @@ class ProductController
              * Nếu sản phẩm không tồn tại => hiển thị trang 404
              * Nếu sản phẩm tồn tại => cắt chuỗi product_image thành mảng hình ảnh để hiển thị, tính giá tiền sản phẩm sau khi giảm giá => hiển thị giao diện trang thông tin sản phẩm
              */
-            $product = $productInfo->getProductInfo($id);
+            $product = $productInfo->getProductInfo($id, $name);
             if (empty($product)) {
-               // include ROOT_DIR . '/src/views/admin/404.php';
+               include ROOT_DIR . '/src/views/admin/404.php';
             } else {
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
-              //  include ROOT_DIR . '/src/views/user/san-pham.php';
+               include ROOT_DIR . '/src/views/user/san-pham.php';
             }
             var_dump($product);
             
@@ -87,8 +94,10 @@ class ProductController
     }
     public static function GetProductController()
     {
+        $productModels = new ProductModel();
+        $productList = $productModels->getProduct();
         include_once ROOT_DIR .'/src/views/user/product-page.php';
-      
+      var_dump($productList);
     }
     public static function AboutUs()
     {
@@ -101,27 +110,63 @@ class ProductController
     }
 
     public static function Category()
-    {
 
+    {   $categoryModel = new CategoryModel();
+        $productModel = new ProductModel();
+        $categories =  $categoryModel->getCategories();
+        var_dump($categories);
         /**
+         * Nếu URL > 1 => đã xác định danh mục => Nếu danh mục không tồn tại => hiển thị trang 404
+         * Ngược lại => chưa xác định danh mục => điều hướng đến danh mục đầu tiên trong mảng danh mục
+         */
+        if (count(URL) > 1) {
+            /**
+             * Tách chuỗi tên-id thành 2 biến name và id
+             */
+            $arr = explode("-", URL[1]);
+            $id = $arr[count($arr) - 1];
+            unset($arr[count($arr) - 1]);
+            $name = "%" . implode("%", $arr) . "%";
+
+            /**
+
              * Mặc định page = 1
              * Nếu URL > 2 => có số trang => gắn page lại bằng cách tách chuỗi trang-page
              */
             $page = 1;
             if (count(URL) > 2) {
                 $arr = explode("-", URL[2]);
-                $page =  $arr[count($arr) - 1];
+
+                $page = $arr[count($arr) - 1];
             }
-            $link = BASE_URL . '/danh-muc/' . URL[0] . '/trang-';
-        //ham` backend gui ve`
-        $count = 23;
-        $count = $count % 12 == 0 ? intval($count / 12) : intval($count / 12) + 1;
-        
-        include_once ROOT_DIR . '/src/views/user/category.php';
+
+            /** 
+             * Lấy số lượng sản phẩm hiện đang có dùng để phân trang (mỗi trang 12 sản phẩm)
+             * Nếu số lượng sản phẩm không chia hết cho 12 => cộng thêm 1 vào số trang
+             */
+            $count = $productModel->getCountProductsCategory($id, $name);
+            $count = $count % 12 == 0 ? intval($count / 12) : intval($count / 12) + 1;
+           
+            /**
+             * Tạo đường dẫn dùng cho phân trang
+             */
+            $link = BASE_URL . '/danh-muc/' . URL[1] . '/trang-';
+            $products = $categoryModel->getProductsBYID($id, $name, $page);
+            var_dump($count);
+            var_dump($products);
+            //include ROOT_DIR . '/src/views/user/danh-muc.php';
+        } else {
+            /**
+             * Chuyển hướng đường dẫn
+             */
+            header("Location: " . BASE_URL . '/danh-muc/' . TienIch::vn_to_str($categories[0]['c_name']) . '-' . $categories[0]['c_id']);
+        }
+
 
     }
     // public static function Pagination()
     // {
+    //     $page=1;
     //     include_once ROOT_DIR . '/src/views/user/pagination.php';
     // }
     
