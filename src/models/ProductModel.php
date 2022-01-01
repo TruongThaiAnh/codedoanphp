@@ -87,11 +87,11 @@ class ProductModel extends Db
      * Lấy thông tin của sản phẩm
      * Nếu sản phẩm không tồn tại trả về null
      */
-    public function getProductInfo($id)
+    public function getProductInfo($id, $name)
     {
         
-        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `status` = 1");
-        $sql->bind_param("i", $id);
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `p_id` = ? AND `p_name` LIKE ? AND  `status` = 1");
+        $sql->bind_param("is", $id, $name);
         $result = parent::select($sql);
         return count($result) != 0 ? parent::select($sql)[0] : null;
     }
@@ -108,22 +108,22 @@ class ProductModel extends Db
         return $sql->execute();
     }
     /*
-    xóa sản phẩm phẩm theo id
+    xóa sản phẩm phẩm theo id và tên
     
     */
-      public function deleteProduct($id)
+      public function deleteProduct($id ,$name)
     {
         //2. Viết câu SQL
-        $sql = parent::$conection->prepare("DELETE FROM `product` WHERE p_id = ?");
-        $sql->bind_param('i',$id);
+        $sql = parent::$conection->prepare("DELETE FROM `product` WHERE p_id = ? and p_name = ?");
+        $sql->bind_param('is',$id, $name);
         return $sql->execute();
     }
     /*
     sửa sản phẩm
      */
     public function UpdateProduct($productName ,$productPrice, $productImage , $productDescription,$status ,$lastupdate ,$sale ,$id){
-        $sql = parent::$conection->prepare("UPDATE `product` SET  `p_name`= ? ,`p_price`= ? , `p_image`= ? , `p_description`= ?,`status`= ? ,`lastupdate`= ?,`sale`= ?, WHERE `p_id`= ?");
-        $sql-> bind_param('sissiiii',$productName ,$productPrice, $productImage , $productDescription,$status ,$lastupdate ,$sale ,$id);
+        $sql = parent::$conection->prepare("UPDATE `product` SET  `p_name`= ? ,`p_price`= ? , `p_image`= ? , `p_description`= ?,`status`= ? ,`lastupdate`= `lastupdate`+1,`sale`= ?, WHERE `p_id`= ? and lastupdate = `lastupdate`");
+        $sql-> bind_param('sissiiii',$productName ,$productPrice, $productImage , $productDescription,$status ,$sale ,$id, $lastupdate);
         return $sql-> execute();
         
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 30, 2021 lúc 01:13 PM
+-- Thời gian đã tạo: Th1 01, 2022 lúc 08:44 AM
 -- Phiên bản máy phục vụ: 5.7.31
 -- Phiên bản PHP: 7.3.21
 
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`p_id`, `p_name`, `p_price`, `p_image`, `p_description`, `status`, `lastupdate`, `sale`, `view`) VALUES
 (1, 'iphone X', 320, 'iphone10.jpg', 'Về kích thước, iPhone X sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).\r\n\r\nThì trên điện thoại iPhone Xvẫn được duy trì một thiết kế tương tự. Máy vẫn có phiên bản khung viền thép, một số phiên bản khung nhôm cùng mặt lưng kính. Tương tự năm ngoái, Apple cũng sẽ cho ra mắt 4 phiên bản là iPhone X', 1, 0, 0, 12),
-(2, 'iphone 13', 400, 'iphone13.jpg', 'Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).\r\n\r\nThì trên điện thoại iPhone 13 vẫn được duy trì một thiết kế tương tự. Máy vẫn có phiên bản khung viền thép, một số phiên bản khung nhôm cùng mặt lưng kính. Tương tự năm ngoái, Apple cũng sẽ cho ra mắt 4 phiên bản là iPhone 13, 13 mini, 13 Pro và 13 Pro Max.', 1, 0, 20, 5),
+(2, 'iphone 13', 400, 'iphone13.jpg', 'Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).\r\n\r\nThì trên điện thoại iPhone 13 vẫn được duy trì một thiết kế tương tự. Máy vẫn có phiên bản khung viền thép, một số phiên bản khung nhôm cùng mặt lưng kính. Tương tự năm ngoái, Apple cũng sẽ cho ra mắt 4 phiên bản là iPhone 13, 13 mini, 13 Pro và 13 Pro Max.', 1, 0, 20, 13),
 (3, 'Iphone 12', 420, 'iphone10.jpg', 'Cứ mỗi năm, đến dạo cuối tháng 8 và gần đầu tháng 9 thì mọi thông tin sôi sục mới về chiếc iPhone mới lại xuất hiện. Apple năm nay lại ra thêm một chiếc iPhone mới với tên gọi mới là iPhone 12 Pro Max, đây là một dòng điện thoại mới và mạnh mẽ nhất của nhà Apple năm nay. Mời bạn tham khảo thêm một số mô tả sản phẩm bên dưới để bạn có thể ra quyết định mua sắm.', 1, 0, 50, 0),
 (4, 'Rog Phone 5', 350, 'rog5.jpg', 'Với những game thủ chuyên nghiệp mong muốn sở hữu một chiếc smartphone gaming có hiệu năng \"siêu cấp\" cho những tựa game MOBA hoặc sinh tồn đình đám hiện nay thì ROG Phone 5 sẽ là chiếc điện thoại có thể giúp bạn thoải mái chiến game mượt mà với cấu hình cực đại.', 1, 0, 0, 0),
 (5, 'Rog Phone 3', 220, 'rog3.jpg', 'Bức phá mọi giới hạn về hiệu năng - Snapdragon 865+ cao cấp, kết nối 5G, RAM 12GB\r\nMàn hình chuẩn gaming - Tấm nền AMOLED, tần số quét cao 144Hz, HDR10+\r\nChơi game không gián đoạn - Pin khủng 6000mAh, chế độ pin tùy chỉnh\r\nChơi game khác biệt - Hệ thống âm thanh kép chất lượng cao, AirTrigger 3, chế độ X- Mode\r\nChụp ảnh chất lượng cao - Bộ ba camera 64MP với cảm biến hàng đầu', 1, 0, 0, 1),
@@ -116,7 +116,7 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`, `p_image`, `p_description`, 
 (8, 'Sam Sung Galaxy z fold 3', 500, 'samsung-galaxy-z-fold-3.jpg', 'Màn hình:\r\n\r\nDynamic AMOLED 2XChính 7.6\" & Phụ 6.2\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 11\r\nCamera sau:\r\n\r\n3 camera 12 MP\r\nCamera trước:\r\n\r\n10 MP & 4 MP\r\nChip:\r\n\r\nSnapdragon 888\r\nRAM:\r\n\r\n12 GB\r\nBộ nhớ trong:\r\n\r\n256 GB\r\nSIM:\r\n\r\n2 Nano SIM + 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n4400 mAh25 W', 1, 0, 0, 0),
 (9, 'samsung galaxy m51', 250, 'samsung-galaxy-m51-trang.jpg', 'Màn hình:\r\n\r\nSuper AMOLED Plus6.7\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 10\r\nCamera sau:\r\n\r\nChính 64 MP & Phụ 12 MP, 5 MP, 5 MP\r\nCamera trước:\r\n\r\n32 MP\r\nChip:\r\n\r\nSnapdragon 730\r\nRAM:\r\n\r\n8 GB\r\nBộ nhớ trong:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n7000 mAh25 W', 1, 0, 0, 0),
 (10, 'Acer Nitro 5 Gaming', 300, 'acer-nitro-gaming.jpg', 'CPU:\r\n\r\ni711800H2.30 GHz\r\nRAM:\r\n\r\n8 GBDDR4 2 khe (1 khe 8GB + 1 khe rời)3200 MHz\r\nỔ cứng:\r\n\r\n512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1TB)Hỗ trợ khe cắm HDD SATA (nâng cấp tối đa 2TB)Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng\r\nMàn hình:\r\n\r\n15.6\"Full HD (1920 x 1080)144Hz\r\nCard màn hình:\r\n\r\nCard rờiRTX 3050Ti 4GB\r\nCổng kết nối:\r\n\r\n3 x USB 3.2HDMIJack tai nghe 3.5 mmLAN (RJ45)USB Type-C\r\nĐặc biệt:\r\n\r\nCó đèn bàn phím\r\nHệ điều hành:\r\n\r\nWindows 10 Home SL\r\nThiết kế:\r\n\r\nVỏ nhựa\r\nKích thước, trọng lượng:\r\n\r\nDài 363.4 mm - Rộng 255 mm - Dày 23.9 mm - Nặng 2.2 kg\r\nThời điểm ra mắt:\r\n\r\n2021', 1, 0, 0, 0),
-(11, 'Laptop Apple MacBook Pro M1 2020 8GB/512GB', 450, 'space-1-org', 'CPU:\r\n\r\nApple M1\r\nRAM:\r\n\r\n8 GB\r\nỔ cứng:\r\n\r\n512 GB SSD\r\nMàn hình:\r\n\r\n13.3\"Retina (2560 x 1600)\r\nCard màn hình:\r\n\r\nCard tích hợp8 nhân GPU\r\nCổng kết nối:\r\n\r\n2 x Thunderbolt 3 (USB-C)Jack tai nghe 3.5 mm\r\nĐặc biệt:\r\n\r\nCó đèn bàn phím\r\nHệ điều hành:\r\n\r\nMac OS\r\nThiết kế:\r\n\r\nVỏ kim loại nguyên khối\r\nKích thước, trọng lượng:\r\n\r\nDài 304.1 mm - Rộng 212.4 mm - Dày 15.6 mm - Nặng 1.4 kg\r\nThời điểm ra mắt:\r\n\r\n2020', 1, 0, 0, 0),
+(11, 'Laptop Apple MacBook Pro M1 2020 8GB/512GB', 450, 'space1.jpg', 'CPU:\r\n\r\nApple M1\r\nRAM:\r\n\r\n8 GB\r\nỔ cứng:\r\n\r\n512 GB SSD\r\nMàn hình:\r\n\r\n13.3\"Retina (2560 x 1600)\r\nCard màn hình:\r\n\r\nCard tích hợp8 nhân GPU\r\nCổng kết nối:\r\n\r\n2 x Thunderbolt 3 (USB-C)Jack tai nghe 3.5 mm\r\nĐặc biệt:\r\n\r\nCó đèn bàn phím\r\nHệ điều hành:\r\n\r\nMac OS\r\nThiết kế:\r\n\r\nVỏ kim loại nguyên khối\r\nKích thước, trọng lượng:\r\n\r\nDài 304.1 mm - Rộng 212.4 mm - Dày 15.6 mm - Nặng 1.4 kg\r\nThời điểm ra mắt:\r\n\r\n2020', 1, 0, 0, 0),
 (12, 'Máy tính bảng iPad Pro M1  512GB (2021)  ', 550, 'tabletpro.jpg', 'Màn hình:\r\n\r\n12.9\"Liquid Retina XDR mini-LED LCD\r\nHệ điều hành:\r\n\r\niPadOS 15\r\nChip:\r\n\r\nApple M1 8 nhân\r\nRAM:\r\n\r\n8 GB\r\nBộ nhớ trong:\r\n\r\n512 GB\r\nKết nối:\r\n\r\n5GNghe gọi qua FaceTime\r\nSIM:\r\n\r\n1 Nano SIM hoặc 1 eSIM\r\nCamera sau:\r\n\r\nChính 12 MP & Phụ 10 MP, TOF 3D LiDAR\r\nCamera trước:\r\n\r\n12 MP\r\nPin, Sạc:\r\n\r\n40.88 Wh (~ 10.835 mAh)20 W', 1, 0, 0, 0),
 (13, 'Máy tính bảng iPad Air 4 Wifi 64GB (2020)', 250, 'tablet.jpg', 'Màn hình:\r\n\r\n10.9\"Liquid Retina\r\nHệ điều hành:\r\n\r\niPadOS 15\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nBộ nhớ trong:\r\n\r\n64 GB\r\nKết nối:\r\n\r\nNghe gọi qua FaceTime\r\nCamera sau:\r\n\r\n12 MP\r\nCamera trước:\r\n\r\n7 MP\r\nPin, Sạc:\r\n\r\n28.65 Wh (~ 7600 mAh)20 W', 1, 0, 0, 0),
 (14, 'Tai Nghe', 100, 'tainghe.jpg', 'Pin:\r\n\r\nDùng 4.5 giờ - Sạc 2 giờ\r\nCổng sạc:\r\n\r\nLightningSạc MagSafe\r\nCông nghệ âm thanh:\r\n\r\nActive Noise CancellationAdaptive EQTransparency Mode\r\nTương thích:\r\n\r\nAndroidiOS (iPhone)iPadOS (iPad)MacOS (Macbook, iMac)\r\nỨng dụng kết nối:\r\n\r\nBluetooth TWS\r\nTiện ích:\r\n\r\nChống nước IPX4\r\nHỗ trợ kết nối:\r\n\r\nBluetooth 5.0\r\nĐiều khiển bằng:\r\n\r\nCảm ứng chạm\r\nHãng\r\n\r\nApple. Xem thông tin hãng', 1, 0, 0, 0),
@@ -164,9 +164,19 @@ INSERT INTO `product_category` (`category_ID`, `productID`) VALUES
 DROP TABLE IF EXISTS `slider`;
 CREATE TABLE IF NOT EXISTS `slider` (
   `s_id` int(11) NOT NULL AUTO_INCREMENT,
-  `s_name` varchar(250) NOT NULL,
+  `s_img` varchar(250) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `slider`
+--
+
+INSERT INTO `slider` (`s_id`, `s_img`) VALUES
+(1, '14de2.jpg'),
+(2, '13de2.jpg'),
+(3, '11de2.jpg'),
+(4, '12de2.jpg');
 
 -- --------------------------------------------------------
 
