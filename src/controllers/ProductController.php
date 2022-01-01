@@ -8,6 +8,7 @@ class ProductController
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
+        include_once ROOT_DIR . '/src/views/user/category.php';
     }
     // tìm kiếm sản phẩm
     public static function SearchController()
@@ -89,11 +90,11 @@ class ProductController
              */
             $product = $productInfo->getProductInfo($id, $name);
             if (empty($product)) {
-               // include ROOT_DIR . '/src/views/admin/404.php';
+               include ROOT_DIR . '/src/views/admin/404.php';
             } else {
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
-              //  include ROOT_DIR . '/src/views/user/san-pham.php';
+               include ROOT_DIR . '/src/views/user/san-pham.php';
             }
             var_dump($product);
             
