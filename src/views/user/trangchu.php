@@ -73,13 +73,13 @@
                                 <?php foreach ($productList as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
-                                            <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
+                                            <div class="image" style="width:300px; height:200px; margin-left:-70px; ">
                                                 <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
                                             </div>
                                             <div class="product-name"><?php  echo $product['p_name'] ?> </div>
                                             <div class="about">
                                                 <div class="price">
-                                                    <h3><?php echo $product['p_price']?> $</h3>
+                                                    <h3  ><?php echo $product['p_price']?> $</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,8 +117,8 @@
                                 <?php foreach ($pruductHot as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
-                                            <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
-                                                <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
+                                            <div class="image" style="width:300px; height:200px; margin-left:-70px; ">
+                                                <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" style="width: auto;height: auto; " src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
                                             </div>
                                             <div class="product-name"><?php  echo $product['p_name'] ?> </div>
                                             <div class="about">

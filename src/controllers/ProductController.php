@@ -7,11 +7,10 @@ class ProductController
         $productModels = new ProductModel();
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
-        $slider = new SliderModel();
+        $slider = new sliderModel();
         $sliders = $slider->getSliderAll();
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
-
-    }
+    }  
     // tìm kiếm sản phẩm
     public static function SearchController()
     {
@@ -118,13 +117,14 @@ class ProductController
     {
         include_once ROOT_DIR . '/src/views/user/contact-us.php';
     }
-
+    //danh mục
     public static function Category()
 
-    {   $categoryModel = new CategoryModel();
+    { 
+        $categoryModel = new CategoryModel();
         $productModel = new ProductModel();
         $categories =  $categoryModel->getCategories();
-        var_dump($categories);
+       
         /**
          * Nếu URL > 1 => đã xác định danh mục => Nếu danh mục không tồn tại => hiển thị trang 404
          * Ngược lại => chưa xác định danh mục => điều hướng đến danh mục đầu tiên trong mảng danh mục
@@ -162,9 +162,8 @@ class ProductController
              */
             $link = BASE_URL . '/danh-muc/' . URL[1] . '/trang-';
             $products = $categoryModel->getProductsBYID($id, $name, $page);
-            var_dump($count);
-            var_dump($products);
-            //include ROOT_DIR . '/src/views/user/danh-muc.php';
+            
+            include ROOT_DIR . '/src/views/user/category.php';
         } else {
             /**
              * Chuyển hướng đường dẫn

@@ -2,6 +2,9 @@
 class AdminController {
 
     public static function Cate() {
+        $productmodel = new ProductModel();
+        $productList = $productmodel->getProduct();
+
         include_once ROOT_DIR . '/src/views/admin/admin-product.php';
     }
     public static function Admin_them() {
@@ -11,6 +14,8 @@ class AdminController {
         include_once ROOT_DIR . '/src/views/admin/user-sua.php';
     }
     public static function Admin_danh_muc() {
+        $categoryModel = new CategoryModel();
+        $categories =  $categoryModel->getCategories();
         include_once ROOT_DIR . '/src/views/admin/admin-danhmuc.php';
     }
     public static function User() {
