@@ -19,20 +19,21 @@
             </div>
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner">
-
+                
                     <!-- anh slider -->
                     <div class="carousel-item active">
-                        <img class="w-100 d-block" src="assets/img/ip/11de2.jpg" alt="Slide Image">
+                  
+                    <img class="w-100 d-block" src="./uploads/12de2.jpg" alt="Slide Image">
                     </div>
+                    <?php foreach ($sliders as $sliderItem) {       ?>
                     <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/12de2.jpg" alt="Slide Image">
+                        <img class="w-100 d-block" src="<?php echo BASE_URL .'/uploads/' .$sliderItem['s_img'] ?>" alt="Slide Image">
                     </div>
-                    <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/13de2.jpg" alt="Slide Image">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/14de2.jpg" alt="Slide Image">
-                    </div>
+                  
+                    <?PHP  
+                    }
+                    ?>
+                    
                     <!-- anh slider -->
                 </div>
                 <div>

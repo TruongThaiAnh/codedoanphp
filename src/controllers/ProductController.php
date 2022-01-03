@@ -7,7 +7,10 @@ class ProductController
         $productModels = new ProductModel();
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
+        $slider = new SliderModel();
+        $sliders = $slider->getSliderAll();
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
+
     }
     // tìm kiếm sản phẩm
     public static function SearchController()

@@ -9,7 +9,14 @@ class SliderModel extends Db
         $sql = parent::$conection->prepare("SELECT * FROM `slider` WHERE 1");
         return parent::select($sql); // xuất kết quả
     }
-
+    //lấy theo id
+    public function getSliderID($id,$name)
+    {
+                   
+        $sql = parent::$conection->prepare("SELECT * FROM `slider` WHERE s_id=? and s_img= ? ");
+        $sql->bind_param('is',$id,$name);
+        return parent::select($sql); // xuất kết quả
+    }
    // xóa sản phẩm phẩm theo id và tên
     
    
