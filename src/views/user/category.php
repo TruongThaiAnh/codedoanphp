@@ -17,9 +17,9 @@
                                 <div class="filters">
                                     <div class="filter-item">
                                         <h3>Danh mục</h3>
-                                        <?php for ($i = 0; $i < 4; $i++){?>
+                                        <?php foreach ($categories as $category){?>
                                             <div>
-                                                <a href=""> Iphone </a>
+                                                <a href="<?php echo BASE_URL . '/danh-muc/'. TienIch::vn_to_str($category ['c_name'] ).'-' .$category['c_id'] ?>"><?php echo $category["c_name"]?></a>
                                             </div>
                                         <?php
                                         }
@@ -33,40 +33,23 @@
                         <div class="products" style="margin-left:20px;">
                             <div class="row no-gutters">
                                 <!-- san pham o day  -->
-                                <?php for ($i = 0; $i < 12; $i++) {  ?>
+                                <?php foreach ($products as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
                                             <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
-                                                <a href="<?php echo BASE_URL . '/san-pham' ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL ?>/assets/img/ip/ip11ca.jpg"></a>
-                                            </div>
-                                            <div class="product-name">Iphone 13</div>
-                                            <div class="about">
-                                                <div class="price">
-                                                    <h3>$300</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                            <!-- san pham o day  -->
-                                <?php foreach ($productList as $product) {  ?>
-                                    <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
-                                        <div class="clean-product-item">
-                                            <div class="image" style="width:300px; height:200px; margin-left:-70px; ">
                                                 <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
                                             </div>
-                                            <div class="product-name"><?php  echo $product['p_name'] ?> </div>
+                                            <div class="product-name"><?php echo $product["p_name"]?></div>
                                             <div class="about">
                                                 <div class="price">
-                                                    <h3  ><?php echo $product['p_price']?> $</h3>
+                                                    <h3><?php echo $product["p_price"]?></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 <?php } ?>
                             </div>
-                            <!-- san pham o day  -->
+                           
 
 
                             <?php include ROOT_DIR ."/src/views/user/pagination.php" ?>
