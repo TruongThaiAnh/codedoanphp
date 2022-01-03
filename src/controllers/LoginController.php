@@ -14,7 +14,7 @@ class LoginController
     }
     session_start();
     if(session_destroy()) {
-        header("/src/views/login.php");
+        header("/src/views/login/login.php");
     }
         include_once ROOT_DIR . '/src/views/login/login.php';
     } 

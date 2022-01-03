@@ -7,6 +7,8 @@ class ProductController
         $productModels = new ProductModel();
         $productList = $productModels->getProductsView();
         $pruductHot = $productModels->getProductsBySale();
+        $slider = new SliderModel();
+        $sliders = $slider->getSliderAll();
         include_once ROOT_DIR . '/src/views/user/trangchu.php';
         include_once ROOT_DIR . '/src/views/user/category.php';
     }
@@ -90,11 +92,11 @@ class ProductController
              */
             $product = $productInfo->getProductInfo($id, $name);
             if (empty($product)) {
-               include ROOT_DIR . '/src/views/admin/404.php';
+               // include ROOT_DIR . '/src/views/admin/404.php';
             } else {
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
-               include ROOT_DIR . '/src/views/user/san-pham.php';
+              //  include ROOT_DIR . '/src/views/user/san-pham.php';
             }
             var_dump($product);
             
@@ -129,7 +131,7 @@ class ProductController
          */
         if (count(URL) > 1) {
             /**
-             * Tách chuỗi tên-id thành 2 biến name và id
+             * Tách chuỗi tên-id thành 2 biến name và idF
              */
             $arr = explode("-", URL[1]);
             $id = $arr[count($arr) - 1];
