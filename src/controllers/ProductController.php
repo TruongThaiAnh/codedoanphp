@@ -96,6 +96,7 @@ class ProductController
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
               //  include ROOT_DIR . '/src/views/user/san-pham.php';
+
             }
             var_dump($product);
             
@@ -162,7 +163,10 @@ class ProductController
              */
             $link = BASE_URL . '/danh-muc/' . URL[1] . '/trang-';
             $products = $categoryModel->getProductsBYID($id, $name, $page);
+
             
+
+   
             include ROOT_DIR . '/src/views/user/category.php';
         } else {
             /**

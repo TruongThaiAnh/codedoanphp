@@ -90,6 +90,10 @@ if (count(URL) != 0) {
             AdminController::CategoryAdd();
             break;
 
+            case 'add-to-cart':
+                CartController::AddToCart();
+                break;
+
             // phan` admin
             // phan` admin
 
@@ -101,6 +105,12 @@ if (count(URL) != 0) {
             // bước 3 : coppy cái bên trên , sửa tên case , sửa tên hàm 
         case 'check-forgot':
             AdminController::CheckForgot();
+            break;
+        case 'test-1':
+            CartController::Test1();
+            break;
+        case 'test-2':
+            CartController::Test2();
             break;
             // bước 4 : quay lại cái form , sửa tên 
             //lam form
