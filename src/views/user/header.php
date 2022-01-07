@@ -15,6 +15,9 @@
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/assets/fonts/font-awesome.min.css">
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/fix/bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/fix/fonts/fontawesome-all.min.css">
+      <link rel="stylesheet" href="<?php echo BASE_URL ?>/ckeditor/ckeditor.min.css">
+      <script src="<?php echo BASE_URL ?>/ckfinder/ckfinder.js" ></script>
+      <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">

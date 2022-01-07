@@ -86,7 +86,7 @@ class ProductController
             } else {
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
-               include ROOT_DIR . '/src/views/user/san-pham.php';
+               include ROOT_DIR . '/src/views/user/product-page.php';
             }
             var_dump($product);
             
@@ -154,7 +154,7 @@ class ProductController
             $products = $categoryModel->getProductsBYID($id, $name, $page);
             var_dump($count);
             var_dump($products);
-            //include ROOT_DIR . '/src/views/user/danh-muc.php';
+            include ROOT_DIR . '/src/views/user/category.php';
         } else {
             /**
              * Chuyển hướng đường dẫn

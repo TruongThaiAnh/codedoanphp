@@ -3,21 +3,23 @@ class LoginController
 { //đăng nhập
     public static function Log() {
 
-        if(isset($_POST['email']) && isset($_POST['password'])) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $userModel = new UserModel();
-            $user = $userModel->login($email, $password);
+    //     if(isset($_POST['email']) && isset($_POST['password'])) {
+    //         $email = $_POST['email'];
+    //         $password = $_POST['password'];
+    //         $userModel = new UserModel();
+    //         $user = $userModel->login($email, $password);
 
-        if($user) {
-        $_SESSION['email'] = $user;
-    }
-    session_start();
-    if(session_destroy()) {
-        header("/src/views/login.php");
-    }
+    //     if($user) {
+    //     $_SESSION['email'] = $user;
+    // }
+    // session_start();
+    // if(session_destroy()) {
+    //     header("/src/views/login.php");
+    // }
+    // } 
+    
         include_once ROOT_DIR . '/src/views/login/login.php';
-    } 
+
 }
     public static function Adre() {
         include_once ROOT_DIR . '/src/views/login/ad-re.php';
