@@ -42,7 +42,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Prize</th>
+                            <th>Price</th>
                             <th>Image</th>
                             <th>Description</th>
                             <th></th>
@@ -50,16 +50,16 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <?php for ($i = 0; $i < 12; $i++) {  ?>
+                    <?php foreach ($productList as $product) {  ?>
                         <tbody style="border-bottom: 2px solid #e3e6f0;">
                             <tr>
-                                <td style="padding-top:1rem;">A01</td>
-                                <td style="padding-top:1rem;">Iphone 13</td>
-                                <td style="padding-top:1rem;">300$</td>
+                                <td style="padding-top:1rem;"><?php echo $product["p_id"]?></td>
+                                <td style="padding-top:1rem;"><?php echo $product["p_name"]?></td>
+                                <td style="padding-top:1rem;"><?php echo $product["p_price"]?></td>
                                 <td style="padding-top:1rem;">
-                                    <img src="<?php echo BASE_URL ?>/assets/img/ip/13de.jpg" style="height: 50px; width:100px;">
+                                <img style=" width: 80px; height: 80px;" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>">
                                 </td>
-                                <td style="padding-top:1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+                                <td style="padding-top:1rem;"><?php echo $product["p_description"]?> </td>
                                 <td  > 
                                 <a href="<?php echo BASE_URL . '/product-sua' ?>" style="text-decoration: none;">
                                         <button style="border-radius: 5px; height: 40px; width:80px" type="button" onclick="showMess" class="btn btn-success btn-sm btn-block">

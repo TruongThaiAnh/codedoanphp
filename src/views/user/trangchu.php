@@ -6,9 +6,7 @@
 <main class="page landing-page" style="margin-top: 5rem;" >
 
     <!-- TAM THOI -->
-    <a href="<?php echo BASE_URL . '/danh-muc-admin' ?>" style="margin : 0 30rem;" >
-        <button class="btn-g12" type="button">Admin</button>
-    </a>
+  
     <!-- TAM THOI -->
 
     <!-- slider -->
@@ -19,20 +17,21 @@
             </div>
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner">
-
+                
                     <!-- anh slider -->
                     <div class="carousel-item active">
-                        <img class="w-100 d-block" src="assets/img/ip/11de2.jpg" alt="Slide Image">
+                  
+                    <img class="w-100 d-block" src="./uploads/12de2.jpg" alt="Slide Image">
                     </div>
+                    <?php foreach ($sliders as $sliderItem) {       ?>
                     <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/12de2.jpg" alt="Slide Image">
+                        <img class="w-100 d-block" src="<?php echo BASE_URL .'/uploads/' .$sliderItem['s_img'] ?>" alt="Slide Image">
                     </div>
-                    <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/13de2.jpg" alt="Slide Image">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="w-100 d-block" src="assets/img/ip/14de2.jpg" alt="Slide Image">
-                    </div>
+                  
+                    <?PHP  
+                    }
+                    ?>
+                    
                     <!-- anh slider -->
                 </div>
                 <div>
@@ -72,13 +71,13 @@
                                 <?php foreach ($productList as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
-                                            <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
+                                            <div class="image" style="width:300px; height:200px; margin-left:-70px; ">
                                                 <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
                                             </div>
                                             <div class="product-name"><?php  echo $product['p_name'] ?> </div>
                                             <div class="about">
                                                 <div class="price">
-                                                    <h3><?php echo $product['p_price']?> $</h3>
+                                                    <h3  ><?php echo $product['p_price']?> $</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -116,8 +115,8 @@
                                 <?php foreach ($pruductHot as $product) {  ?>
                                     <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
                                         <div class="clean-product-item">
-                                            <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
-                                                <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
+                                            <div class="image" style="width:300px; height:200px; margin-left:-70px; ">
+                                                <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" style="width: auto;height: auto; " src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
                                             </div>
                                             <div class="product-name"><?php  echo $product['p_name'] ?> </div>
                                             <div class="about">

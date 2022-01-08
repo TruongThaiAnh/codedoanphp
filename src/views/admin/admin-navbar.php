@@ -8,7 +8,6 @@
          <hr class="sidebar-divider my-0">
          <ul class="navbar-nav text-light" id="accordionSidebar">
              <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'san-pham-admin' ? 'active' : '' : '' ?>"><a class="nav-link" href="<?php echo BASE_URL . '/san-pham-admin' ?>"><i class="fas fa-box-open"></i><span>Product</span></a></li>
-             <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'user-admin' ? 'active' : '' : '' ?>"><a class="nav-link" href="<?php echo BASE_URL . '/user-admin' ?>"><i class="fas fa-user"></i><span>User</span></a></li>
              <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'danh-muc-admin' ? 'active' : '' : '' ?>"><a class="nav-link " href="<?php echo BASE_URL . '/danh-muc-admin' ?>"><i class="fas fa-table"></i><span>Category</span></a></li>
              <li class="nav-item<?php echo count(URL) == 0 || URL[0] == 'trang-chu' ? 'active' : '' ?> "><a class="nav-link " href="<?php echo BASE_URL ?>"><i class="fas fa-home"></i><span>Home</span></a></li>
          </ul>

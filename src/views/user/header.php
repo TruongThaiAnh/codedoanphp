@@ -6,7 +6,7 @@
 <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-      <link rel="shortcut icon" href="<?php echo BASE_URL ?>/assets/img/mountain_icon-icons.com_54385.png" type="image/x-icon">
+      <link rel="shortcut icon" href="<?php echo BASE_URL ?>/uploads/anh.png" type="image/x-icon">
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/assets/bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/assets/fonts/simple-line-icons.min.css">
       <link rel="stylesheet" href="<?php echo BASE_URL ?>/assets/css/smoothproducts.css">

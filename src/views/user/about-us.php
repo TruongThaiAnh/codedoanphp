@@ -40,7 +40,7 @@
                     </div>
                 </div> 
                 <div class="text-center" style="margin-top: 40px;"> <a class="small" href="<?php echo BASE_URL . '/tuong-tac' ?>"  >Contact us</a></div>
-                <div class="text-center"style="margin-top: 10px" ><a class="small" href="<?php echo BASE_URL ?>index.php">Back To Home</a></div>
+                <div class="text-center"style="margin-top: 10px" ><a class="small" href="<?php echo BASE_URL ?>">Back To Home</a></div>
             </div>
         </section>
     </main>

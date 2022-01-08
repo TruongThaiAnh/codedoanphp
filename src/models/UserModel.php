@@ -15,13 +15,13 @@ class UserModel extends Db{
     }
 
 
-    // // hàm đăng ký
-    // public function addUser($firstname,$lastname,$username, $password)
-    // {
-    //     //2. Viết câu SQL
-    //     $password = password_hash($password, PASSWORD_DEFAULT);
-    //     $sql = parent::$conection->prepare("INSERT INTO `user`(`firstname`,`lastname`,`email`, `password`) VALUES (?,?,?,?)");
-    //     $sql->bind_param('ssss',$firstname,$lastname, $username, $password);
-    //     return $sql->execute();
-    // }
+    // hàm đăng ký
+    public function addUser($firstname,$lastname,$username, $password)
+    {
+        //2. Viết câu SQL
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $sql = parent::$conection->prepare("INSERT INTO `user`(`firstname`,`lastname`,`email`, `password`) VALUES (?,?,?,?)");
+        $sql->bind_param('ssss',$firstname,$lastname, $username, $password);
+        return $sql->execute();
+    }
 }

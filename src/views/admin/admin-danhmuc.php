@@ -52,10 +52,10 @@
                                             <th></th>
                                         </tr>
                                     </thead> 
-                                    <?php for ($i = 0; $i < 3; $i++) {  ?>
+                                    <?php foreach ($categories as $category) {  ?>
                                     <tbody style="border-bottom: 2px solid #e3e6f0;" >
                                         <tr>
-                                            <td style="padding-top:1rem;">Iphone</td>
+                                            <td style="padding-top:1rem;"><?php echo $category["c_name"]?></td>
                                             <td>
                                             <a href="<?php echo BASE_URL . '/category-sua' ?>" style="text-decoration: none;" >
                                                 <button style="border-radius: 5px; width:80px  " type="button" onclick="showMess"
