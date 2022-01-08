@@ -6,9 +6,7 @@
 <main class="page landing-page" style="margin-top: 5rem;" >
 
     <!-- TAM THOI -->
-    <a href="<?php echo BASE_URL . '/danh-muc-admin' ?>" style="margin : 0 30rem;" >
-        <button class="btn-g12" type="button">Admin</button>
-    </a>
+  
     <!-- TAM THOI -->
 
     <!-- slider -->
