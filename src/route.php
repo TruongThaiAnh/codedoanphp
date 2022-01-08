@@ -90,10 +90,6 @@ if (count(URL) != 0) {
             AdminController::CategoryAdd();
             break;
 
-            case 'add-to-cart':
-                CartController::AddToCart();
-                break;
-
             // phan` admin
             // phan` admin
 
@@ -106,15 +102,15 @@ if (count(URL) != 0) {
         case 'check-forgot':
             AdminController::CheckForgot();
             break;
-        case 'test-1':
-            CartController::Test1();
-            break;
-        case 'test-2':
-            CartController::Test2();
-            break;
             // bước 4 : quay lại cái form , sửa tên 
             //lam form
             //lam form
+            case 'test-1':
+                CartController::Test1();
+                break;
+            case 'test-2':
+                CartController::Test2();
+                break;
         default:
             include ROOT_DIR . '/src/views/admin/404.php';
             break;

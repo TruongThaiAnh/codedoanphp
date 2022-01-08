@@ -38,17 +38,7 @@ class CategoriesController
         var_dump($categoriesList);
     }
 
-    public static function showCategoriesModel()
-    {
-        $id = "1";
-        $name = "phone";
-        $start = "1";
-
-        
-        $categories = new CategoryModel();
-        $categoriesList = $categories->getProductsBYID($id, $name, $start);
-        var_dump($categoriesList);
-    }
+   
 
 
     public static function CategoryController()

@@ -45,8 +45,9 @@ class CartController
             include ROOT_DIR . '/src/views/admin/404.php';
         }
         // unset($_SESSION["cart"]);
-    }    
 
+     
+    }
     public static function AddToCart(){
         if(!empty(URL[1])){
             $arr = explode("-", URL[1]);
@@ -71,5 +72,5 @@ class CartController
     public static function Test2(){
        var_dump($_POST);
 
-    }
+}                       
 }

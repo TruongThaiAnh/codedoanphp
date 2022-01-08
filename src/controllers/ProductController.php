@@ -14,7 +14,8 @@ class ProductController
     // tìm kiếm sản phẩm
     public static function SearchController()
     {
-        
+        $categoryModel = new CategoryModel();
+        $categories =  $categoryModel->getCategories();
         $productModels = new ProductModel();
         if (!empty($_GET["search"])){
         $search = $_GET["search"];
@@ -33,7 +34,6 @@ class ProductController
              * Nếu số lượng sản phẩm không chia hết cho 12 => cộng thêm 1 vào số trang
              */
              $count = $productModels->CountsearchProducts($search);
-             var_dump($count);
              $count = $count % 12 == 0 ? intval($count / 12) : intval($count / 12) + 1;
             
             /**
@@ -43,7 +43,7 @@ class ProductController
             $link = BASE_URL . '/tim-kiem/'. '/trang-'  ;
 
             $products = $productModels->searchProducts($search,$page);
-            var_dump($products);
+            
            
         }
         include_once ROOT_DIR . '/src/views/user/tim-kiem.php';
@@ -65,7 +65,7 @@ class ProductController
             $id = $arr[count($arr) - 1];
             unset($arr[count($arr) - 1]);
             $nme = "%" . implode("%", $arr) . "%";
-            // $name ="iphone X";
+            
 
             $arr = explode("-", URL[1]);
             $id = $arr[count($arr) - 1];
@@ -91,14 +91,13 @@ class ProductController
              */
             $product = $productInfo->getProductInfo($id, $name);
             if (empty($product)) {
-               // include ROOT_DIR . '/src/views/admin/404.php';
+               include ROOT_DIR . '/src/views/admin/404.php';
             } else {
                 $product_image = $product['p_image'];
                 $price = $product['p_price'] * (100 - $product['sale']) / 100;
-              //  include ROOT_DIR . '/src/views/user/san-pham.php';
-
+                include ROOT_DIR . '/src/views/user/product-page.php';
             }
-            var_dump($product);
+           
             
         }
     }
@@ -122,8 +121,9 @@ class ProductController
     public static function Category()
 
     { 
-        $categoryModel = new CategoryModel();
+       
         $productModel = new ProductModel();
+        $categoryModel = new CategoryModel();
         $categories =  $categoryModel->getCategories();
        
         /**
@@ -163,10 +163,7 @@ class ProductController
              */
             $link = BASE_URL . '/danh-muc/' . URL[1] . '/trang-';
             $products = $categoryModel->getProductsBYID($id, $name, $page);
-
             
-
-   
             include ROOT_DIR . '/src/views/user/category.php';
         } else {
             /**
@@ -176,6 +173,19 @@ class ProductController
         }
 
 
+    }
+    public static function Addproduct(){
+        session_start();
+        $productModels = new ProductModel();
+        $productName =$_POST['productName'] ;
+        $productPrice =$_POST['productPrice'] ;
+        $productImage =$_POST['productImage']; 
+        $productDescription = $_POST['productDescription'];
+        $status =$_POST['status'];
+        $lastupdate = $_POST['lastupdate'];
+        $sale = $_POST['sale'];
+        $addproduct = $productModels->ProductsAdd($productName ,$productPrice, $productImage , $productDescription,$status ,$lastupdate ,$sale);
+        include_once ROOT_DIR . '/src/views/admin/product-them.php';
     }
     // public static function Pagination()
     // {

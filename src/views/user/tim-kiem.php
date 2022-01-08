@@ -1,35 +1,4 @@
-<!-- <title>Search- ABC_SHOP</title>
 
-
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#download">download</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                  
-                        <div class="container-fluid  " style="width: 50rem; height: 3rem;  " >
-                          <form class="d-flex" action="" method="get" style="margin: 2rem 3rem;" >
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" style="height: 2.7rem;">
-                            <button class="btn btn-outline-light" type="submit" style="border-radius: 5px;" >Search</button>
-                          </form>
-                        </div>
-                      
-                </div>
-            </div>
-        </div>
-    </header>
--->
 
 <!DOCTYPE html>
 <html>
@@ -45,35 +14,69 @@
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#download">download</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
-        <div class="intro-body">
+<?php include ROOT_DIR.'/src/views/user/header.php'; ?>
+<?php include ROOT_DIR . '/src/views/user/navbar.php';?>
+
+    <title>Category - ABC_SHOP</title>
+    <main class="page catalog-page">
+        <section class="clean-block clean-catalog dark" style="margin-top: 50px;" >
             <div class="container">
-                <div class="row">
-                  
-                        <div class="container-fluid  " style="width: 50rem; height: 3rem;  " >
-                          <form class="d-flex" action="" method="get" style="margin: 2rem 3rem;" >
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" style="height: 2.7rem;">
-                            <button class="btn btn-outline-light" type="submit" style="border-radius: 5px;" >Search</button>
-                          </form>
+                <div class="block-heading">
+                    <h2 class="text-info">Danh mục</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                        mattis vitae leo.</p>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="d-none d-md-block">
+                                <div class="filters">
+                                    <div class="filter-item">
+                                        <h3>Danh mục</h3>
+                                        <?php foreach ($categories as $category){?>
+                                            <div>
+                                                <a href="<?php echo BASE_URL . '/danh-muc/'. TienIch::vn_to_str($category ['c_name'] ).'-' .$category['c_id'] ?>"><?php echo $category["c_name"]?></a>
+                                            </div>
+                                        <?php
+                                        }
+                                        ?>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      
+                        <div class="col-md-9">
+                        <div class="products" style="margin-left:20px;">
+                            <div class="row no-gutters">
+                                <!-- san pham o day  -->
+                                <?php foreach ($products as $product) {  ?>
+                                    <div class="col-12 col-md-6 col-lg-3" style="margin:5px 0;">
+                                        <div class="clean-product-item">
+                                            <div class="image" style="width :300px; height:200px; margin-left:-70px; ">
+                                                <a href="<?php echo BASE_URL . '/san-pham/'. TienIch::vn_to_str($product ['p_name'] ).'-' .$product['p_id'] ?>"><img class="img-fluid d-block mx-auto" src="<?php echo BASE_URL .'/uploads/' .$product['p_image'] ?>"></a>
+                                            </div>
+                                            <div class="product-name"><?php echo $product["p_name"]?></div>
+                                            <div class="about">
+                                                <div class="price">
+                                                    <h3><?php echo $product["p_price"]?></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                           
+
+
+                            <?php include ROOT_DIR ."/src/views/user/pagination.php" ?>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    
-    
+        </section>
+    </main>
+</body>
     <footer>
         <div class="container text-center">
             <p>Copyright ©&nbsp;Brand 2021</p>
