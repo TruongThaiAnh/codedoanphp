@@ -71,12 +71,7 @@ if (count(URL) != 0) {
         case 'user-admin':
             AdminController::User();
             break;
-        case 'user-them':
-            AdminController::Admin_them();
-            break;
-        case 'user-sua':
-            AdminController::Admin_sua();
-            break;
+       
         case 'product-them':
             AdminController::ProductAdd();
             break;
@@ -89,28 +84,25 @@ if (count(URL) != 0) {
         case 'category-them':
             AdminController::CategoryAdd();
             break;
-
-            // phan` admin
-            // phan` admin
-
-            //lam form
-            //lam form
+        case 'category-xoa':
+            AdminController::CategoryDelete();
+            break;
+        case 'product-xoa':
+            AdminController::ProductDelete();
+           
         case 'check-login':
             AdminController::Check();
             break;
-            // bước 3 : coppy cái bên trên , sửa tên case , sửa tên hàm 
+        case "log-out" :
+        LoginController::Logout();
+           
         case 'check-forgot':
             AdminController::CheckForgot();
             break;
             // bước 4 : quay lại cái form , sửa tên 
             //lam form
             //lam form
-            case 'test-1':
-                CartController::Test1();
-                break;
-            case 'test-2':
-                CartController::Test2();
-                break;
+           
         default:
             include ROOT_DIR . '/src/views/admin/404.php';
             break;

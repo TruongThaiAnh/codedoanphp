@@ -18,7 +18,7 @@
                                                             <label for="product_id">
                                                                 <strong>Product Name</strong>
                                                             </label>
-                                                            <input class="form-control" type="text" id="product_id"  name="productName">
+                                                            <input class="form-control" type="text" id="product_id"  name="productName" val>
                                                         </div>
                                                     </div>
                                                     <div class="col">

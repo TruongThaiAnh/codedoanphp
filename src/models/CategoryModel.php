@@ -29,20 +29,13 @@ class CategoryModel extends Db{
   
   
       // thêm danh sách sản phẩm
-      public function addCategory($c)
+      public function addCategory($id,$c)
       {
-          $sql = parent::$conection->prepare("INSERT INTO `categories`( `c_name`) VALUES (?)");
-          $sql->bind_param('s', $c);
+          $sql = parent::$conection->prepare("INSERT INTO `categories`(`c_id`, `c_name`)  VALUES (?,?)");
+          $sql->bind_param('is',$id,$c);
           return $sql->execute();
       }
-      // public function addUser($firstname,$lastname,$username, $password)
-      // {
-      //     //2. Viết câu SQL
-         
-      //     $sql = parent::$conection->prepare("INSERT INTO `user`(`firstname`,`lastname`,`email`, `password`) VALUES (?,?,?,?)");
-      //     $sql->bind_param('ssss',$firstname,$lastname, $username, $password);
-      //     return $sql->execute();
-      // }
+     
   
       // sửa danh mục sản phẩm
       public function editCategory($c, $cid)
@@ -99,6 +92,12 @@ class CategoryModel extends Db{
           `product`.`status` = 1 AND `categories_products`.`category_id` = ? AND `categories`.`category_name` LIKE ?");
           $sql->bind_param("is", $id, $name);
           return parent::select($sql)[0]['COUNT(`product`.`product_id`)'];
+      }
+      public static function getCategorybyID($id){
+        
+        $sql = parent::$conection->prepare("SELECT * FROM `categories` WHERE c_id = ?");
+        $sql->bind_param('i',$id);
+        return $sql->execute();
       }
    
 }

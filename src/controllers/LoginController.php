@@ -2,21 +2,6 @@
 class LoginController 
 { //đăng nhập
     public static function Log() {
-//         $userModel = new UserModel();
-//         if(isset($_POST['email']) && isset($_POST['password'])) {
-//             $email = $_POST['email'];
-//             $password = $_POST['password'];
-           
-//             $user = $userModel->login($email, $password);
-
-//         if($user) {
-//         $_SESSION['email'] = $user;
-//     }
-//     session_start();
-  
-//    /* khu sử lí chuyển qua admin hoặc user*/
-   
-//     }
 include_once ROOT_DIR . '/src/views/login/login.php';
 } 
     
@@ -61,6 +46,10 @@ include_once ROOT_DIR . '/src/views/login/login.php';
         include_once ROOT_DIR . '/src/views/login/forgot-password.php';
     }
 
+    public static function Logout() {
+        session_destroy();
+        include_once ROOT_DIR . '/src/views/login/login.php';
+        } 
    
 
    

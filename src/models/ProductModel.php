@@ -23,7 +23,7 @@ class ProductModel extends Db
     
 
     public function getProduct(){
-        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `status` = 1   LIMIT 0,12");
+        $sql = parent::$conection->prepare("SELECT * FROM `product` WHERE `status` = 1  ");
         return parent::select($sql); // xuất kết quả
     }
 
