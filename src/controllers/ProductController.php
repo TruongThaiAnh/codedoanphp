@@ -174,19 +174,7 @@ class ProductController
 
 
     }
-    public static function Addproduct(){
-        session_start();
-        $productModels = new ProductModel();
-        $productName =$_POST['productName'] ;
-        $productPrice =$_POST['productPrice'] ;
-        $productImage =$_POST['productImage']; 
-        $productDescription = $_POST['productDescription'];
-        $status =$_POST['status'];
-        $lastupdate = $_POST['lastupdate'];
-        $sale = $_POST['sale'];
-        $addproduct = $productModels->ProductsAdd($productName ,$productPrice, $productImage , $productDescription,$status ,$lastupdate ,$sale);
-        include_once ROOT_DIR . '/src/views/admin/product-them.php';
-    }
+   
     // public static function Pagination()
     // {
     //     $page=1;

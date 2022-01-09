@@ -8,6 +8,7 @@ class AdminController {
         include_once ROOT_DIR . '/src/views/admin/admin-product.php';
     }
     public static function Admin_them() {
+        
         include_once ROOT_DIR . '/src/views/admin/user-them.php';
     }
     public static function Admin_sua() {
@@ -22,8 +23,21 @@ class AdminController {
         include_once ROOT_DIR . '/src/views/admin/admin-user.php';
     }
     public static function ProductAdd() {
-        include_once ROOT_DIR . '/src/views/admin/product-them.php';
-    }
+      
+            //session_start();
+            $productModels = new ProductModel();
+            $productName =$_POST['productName'];
+            $productPrice =$_POST['productPrice'] ;
+            $productImage =$_POST['productImage']; 
+            $productDescription = $_POST['productDescription'];
+            $status =$_POST['status'];
+            $lastupdate = $_POST['lastupdate'];
+            $sale = $_POST['sale'];
+            
+            $addproduct = $productModels->ProductsAdd($productName ,$productPrice, $productImage , $productDescription,$status ,$lastupdate ,$sale);
+            include_once ROOT_DIR . '/src/views/admin/product-them.php';
+ }
+    
     public static function ProductChange() {
         include_once ROOT_DIR . '/src/views/admin/product-sua.php';
     }
