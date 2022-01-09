@@ -6,8 +6,8 @@ class CartController
     {
         $giohang = $_SESSION["cart"];
         var_dump($giohang);
-        die();
-        include_once ROOT_DIR . '/src/views/user/shopping-cart.php';
+       
+        //include_once ROOT_DIR . '/src/views/user/shopping-cart.php';
     }
 
     public static function Pay()
@@ -44,18 +44,18 @@ class CartController
         } else {
             include ROOT_DIR . '/src/views/admin/404.php';
         }
-        // unset($_SESSION["cart"]);
+         unset($_SESSION["cart"]);
 
      
     }
+    
     public static function AddToCart(){
         if(!empty(URL[1])){
             $arr = explode("-", URL[1]);
             $id = $arr[count($arr) - 1];
             unset($arr[count($arr) - 1]);
             $name = "%" . implode("%", $arr) . "%";
-            var_dump($id);
-            var_dump($name);
+           
 
             // header("Location: " . BASE_URL .'/san-pham/' . URL[1] );
 
@@ -64,13 +64,7 @@ class CartController
         }
 
     }
-    public static function Test1(){
-       
-        include ROOT_DIR . '/src/views/user/test.php'; 
-    }
+   
 
-    public static function Test2(){
-       var_dump($_POST);
-
-}                       
+                      
 }

@@ -106,7 +106,7 @@ class ProductController
         $productModels = new ProductModel();
         $productList = $productModels->getProduct();
         include_once ROOT_DIR .'/src/views/user/product-page.php';
-      var_dump($productList);
+     
     }
     public static function AboutUs()
     {

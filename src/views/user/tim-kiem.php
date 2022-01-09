@@ -23,8 +23,7 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Danh mục</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                   
                 </div>
                 <div class="content">
                     <div class="row">
