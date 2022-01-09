@@ -18,6 +18,7 @@
                               <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'gio-hang' ? 'active' : '' : '' ?> "><a class="nav-link" href="<?php echo BASE_URL . '/gio-hang' ?>">Shopping Cart</a></li>
                               <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'about' ? 'active' : '' : '' ?> "><a class="nav-link" href="<?php echo BASE_URL . '/about' ?>">About Us</a></li>
                               <li class="nav-item <?php echo count(URL) != 0 ? URL[0] == 'dang-nhap' ? 'active' : '' : '' ?> ?> "><a class="nav-link" href="<?php echo BASE_URL . '/dang-nhap' ?>">Login</a></li>
+                              
                         </ul>
                   </div>
             </div>
