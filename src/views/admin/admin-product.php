@@ -59,7 +59,11 @@
                                     
                                 </td>
                                 <td>
-                                    <button style="border-radius: 5px; height: 40px; width:80px" type="button" class="btn btn-danger btn-sm btn-block">Xóa <i style="padding-left:7px;" class="fas fa-trash"></i> </button>
+                                    <a href="<?php echo BASE_URL . '/product-xoa?id=' . $product['p_id'] ?>" style="text-decoration: none;">
+                                        <button style="border-radius: 5px; height: 40px; width:80px" type="button" onclick="showMess" class="btn btn-danger btn-sm btn-block">
+                                            Xóa
+                                            <i style="padding-left:7px;" class="fas fa-trash"></i>
+                                        </button>
                                 </td>
                                 <td></td>
                             </tr>
@@ -80,7 +84,7 @@
         </div>
     </div>
 </div>
-</div>
-
 
 <?php include ROOT_DIR . '/src/views/admin/admin-footer.php'; ?>
+</div>
+
