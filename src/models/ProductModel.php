@@ -111,13 +111,14 @@ class ProductModel extends Db
     xóa sản phẩm phẩm theo id và tên
     
     */
-      public function deleteProduct($id ,$name)
+    public function deleteProduct($id)
     {
         //2. Viết câu SQL
-        $sql = parent::$conection->prepare("DELETE FROM `product` WHERE p_id = ? and p_name = ?");
-        $sql->bind_param('is',$id, $name);
+        $sql = parent::$conection->prepare("DELETE FROM `product` WHERE p_id = ?");
+        $sql->bind_param('i', $id);
         return $sql->execute();
     }
+
     /*
     sửa sản phẩm
      */

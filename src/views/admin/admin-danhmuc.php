@@ -43,11 +43,7 @@
                                                 style="padding-left:7px;" class="fas fa-edit"></i> </button>
                                             </a> 
                                             </td>
-                                            <td>
-                                                <button style="border-radius: 5px; width:80px" type="button"
-                                                    class="btn btn-danger btn-sm btn-block">Xóa <i
-                                                        style="padding-left:7px;" class="fas fa-trash"></i> </button>
-                                            </td>
+                                           
                                             <td></td>
                                         </tr>
 

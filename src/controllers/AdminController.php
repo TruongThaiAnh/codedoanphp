@@ -67,7 +67,7 @@ class AdminController
         
         
         $categories = $category->getCategories();
-        $edt=$categories["c_id"];
+       
         //$editcategory = $category->getEditCategory($id);
          //$id = $_GET['categoryt_id'];
         // $name = $_GET['categoryt_name'];
@@ -92,15 +92,13 @@ class AdminController
     {
         $category = new CategoryModel();
     }
-    public static function ProductDelete()
+    public static function ProductDel()
     {
-        $product = new ProductModel();
-        if (isset($_GET['itemID'])) {
-
-            //$delete = $product->getProductInfo();
-            header("Location:./index.php");
-            exit;
-        }
+        $id = $_REQUEST['id'];
+        $productDel = new ProductModel();
+        $productDels = $productDel->deleteProduct($id);
+        $productList = $productDel->getProduct();
+        include_once ROOT_DIR . '/src/views/admin/admin-product.php';
     }
 
     //check đăng nhập

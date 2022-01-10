@@ -88,7 +88,7 @@ if (count(URL) != 0) {
             AdminController::CategoryDelete();
             break;
         case 'product-xoa':
-            AdminController::ProductDelete();
+            AdminController::ProductDel();
            
         case 'check-login':
             AdminController::Check();
